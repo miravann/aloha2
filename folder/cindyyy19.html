@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthdayy</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f141bd 0%, #764ba2 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: rgba(230, 189, 226, 0.9);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+        h1 {
+            color: #4a4a4a;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        p {
+            font-size: 1.2em;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .date {
+            font-weight: bold;
+            color: #764ba2;
+        }
+        .cake {
+            font-size: 5em;
+            margin: 20px 0;
+        }
+        img {
+            width: 100%; /* Mengatur lebar gambar sesuai dengan lebar container */
+            height: auto; /* Menyesuaikan tinggi gambar secara proporsional */
+            max-width: 400px; /* Mengatur lebar maksimal gambar */
+            border-radius: 10px; /* Menambahkan border radius pada gambar */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Menambahkan efek bayangan pada gambar */
+            margin-top: 20px; /* Menambahkan margin di atas gambar */
+        }
+        .modal {
+            display: none; /* Menyembunyikan modal secara default */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Happy Birthdayy cindyy!!!</h1>
+        <div class="cake">🎂</div>
+        <p>Selamat Ulang Tahun yang ke-<span class="date" id="age"></span>.</p>
+        <p><span class="date" id="birthdate"></span>.</p>
+        <img src="c:\Users\ASUS\Downloads\WhatsApp Image 2024-07-24 at 1.14.11 AM.jpeg" alt="Gambar Ulang Tahun" onclick="showModal()">
+        <p> di klik foto nya yaa</p>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Selamat Ulang Tahun, Cindyy!</h2>
+            <p>Happy Birthday cindyy a.k.a ceycii, mungkin agak alay aku bikin gini wkwk, jujur aku bingung mau ngomong apa tapii aku selalu berharap dan berdoa semoga apa yang kamu semogakan semuanya di ijabah yaa, sekali lagi selamat ulang tahun yang ke-19 cindyy, dan Salam buat keluarga di rumah.</p>
+        </div>
+    </div>
+
+    <script>
+        const birthDate = new Date('2005-07-24');
+        const today = new Date();
+        
+        const age = today.getFullYear() - birthDate.getFullYear();
+        
+        document.getElementById('age').textContent = age;
+        document.getElementById('birthdate').textContent = birthDate.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+
+        // Fungsi untuk menampilkan modal
+        function showModal() {
+            document.getElementById('myModal').style.display = 'block';
+        }
+
+        // Fungsi untuk menutup modal
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+
+        // Menutup modal jika pengguna mengklik di luar konten modal
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('myModal')) {
+                document.getElementById('myModal').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
